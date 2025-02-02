@@ -1,67 +1,57 @@
-﻿
-using System.Collections;
-ArrayList arrlst = new ArrayList();
-arrlst.Add(111);//Boxing
-arrlst.Add("Wipro");
-arrlst.Add(true);
-Console.WriteLine(arrlst);
-foreach (object i in arrlst)
+﻿internal class Program
 {
-    Console.WriteLine(i);
-}
-Console.WriteLine("Capacity of arlst:" + arrlst.Capacity);
-Console.WriteLine("Number of items in ArrayList:" + arrlst.Count);
-Console.WriteLine();
-string[] cities = { "Chennai", "Bangalore", "Hyderabad", "Bihar" };
-arrlst.AddRange(cities);
-foreach (object i in arrlst)
-{
-    Console.WriteLine(i);
-}
-Console.WriteLine();
-Console.WriteLine("Capacity of arlst:" + arrlst.Capacity);
-Console.WriteLine("Number of items in ArrayList:" + arrlst.Count);
-arrlst.Insert(1, 1000);
-foreach (object i in arrlst)
-{
-    Console.WriteLine(i);
-}
-Console.WriteLine();
-int[] ar = { 10, 20, 30 };
-arrlst.InsertRange(3, ar);
-foreach (object i in arrlst)
-{
-    Console.WriteLine(i);
-}
-Console.WriteLine("Capacity of arlst:" + arrlst.Capacity);
-Console.WriteLine("Number of items in ArrayList:" + arrlst.Count);
-Console.WriteLine();
-arrlst.Remove("Chennai");
-foreach (object i in arrlst)
-{
-    Console.WriteLine(i);
-}
-Console.WriteLine();
-arrlst.RemoveAt(2);
-foreach (object i in arrlst)
-{
-    Console.WriteLine(i);
-}
-arrlst.RemoveRange(1, 3);
-foreach (object i in arrlst)
-{
-    Console.WriteLine(i);
-}
-arrlst[1] = "Update";
-foreach (object i in arrlst)
-{
-    Console.WriteLine(i);
-}
-Console.WriteLine(arrlst.Contains("bangalore"));
-ArrayList intarr = new ArrayList();
-intarr.Add(111);
-intarr.Add(112);//Boxing - value type(int) converted to ref type(object)
-foreach (int item in intarr)
-{
-    Console.WriteLine(item);//Unboxing 
-}
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Exception with files");
+        try
+        {
+            int num1, num2, res;
+            try
+            {
+                Console.WriteLine("Enter firstnumber");
+                num1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter firstnumber");
+                num2 = Convert.ToInt32(Console.ReadLine());
+                res = num1 / num2;
+                Console.WriteLine($"Result={res}");
+            }
+            catch (Exception ex)
+            {
+                string FilePath = "Log.txt";
+                FileStream fsw = new FileStream(FilePath, FileMode.OpenOrCreate);
+                if (File.Exists(FilePath))
+                {
+                    StringBuilder str = new StringBuilder();
+                    str.Append($"Message:{ex.Message}\n");
+                    str.Append($"Source:{ex.Source}\n");
+                    str.Append($"StackTrace:{ex.StackTrace}\n");
+                    str.Append($"GetType():{ex.GetType()}\n");
+                    str.Append($"GetType()Name:{ex.GetType().Name}\n");
+                    StreamWriter stw = new StreamWriter(fsw);
+                    stw.Write(str.ToString());
+                    stw.Close();
+                    fsw.Close();
+                    Console.WriteLine("There is an an error check it once");
+                }
+                else
+                {
+                    string msg = FilePath + "Does not exist";
+                    throw new FileNotFoundException(msg, ex);
+                }
+                catch (Exception e)
+            {
+                Console.WriteLine("Current Exception DEtails");
+                Console.WriteLine($"Message:{e.Message}\n");
+                Console.WriteLine($"Source:{e.Source}\n");
+                Console.WriteLine($"StackTrace:{e.StackTrace}\n");
+
+                if (e.InnerException != null)
+                {
+                    Console.WriteLine($"InnerException:{e.InnerException.Message}");
+                    Console.WriteLine($"InnerException:{e.InnerException.Source}");
+                }
+            }
+            Console.WriteLine("MainEnd");
+        }
+
+        }
