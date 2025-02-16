@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management - TimeTable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .timetable {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .timetable th, .timetable td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            background-color: white;
+        }
+        .timetable th {
+            background-color: #333;
+            color: white;
+        }
+        .lunch {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Spring Flowers School</a>
+        <a href="#">Home</a>
+        <a href="#timetable">TimeTable</a>
+    </div>
+
+    <div class="container">
+        <h2>Student TimeTable</h2>
+        <table class="timetable">
+            <tr>
+                <th>Day</th>
+                <th>9:00 AM - 10:00 AM</th>
+                <th>10:00 AM - 11:00 AM</th>
+                <th>11:00 AM - 12:00 PM</th>
+                <th>12:00 PM - 1:00 PM</th>
+                <th>Lunch Break</th>
+                <th>2:00 PM - 3:00 PM</th>
+                <th>3:00 PM - 4:00 PM</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>C#</td>
+                <td>.NET Intro</td>
+                <td>SQL</td>
+                <td>HTML</td>
+                <td class="lunch" rowspan="5">Lunch</td>
+                <td>CSS</td>
+                <td>JavaScript</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>Git</td>
+                <td>Angular</td>
+                <td>React</td>
+                <td>C#</td>
+                <td>.NET Intro</td>
+                <td>SQL</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>HTML</td>
+                <td>CSS</td>
+                <td>JavaScript</td>
+                <td>Git</td>
+                <td>Angular</td>
+                <td>React</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>C#</td>
+                <td>.NET Intro</td>
+                <td>SQL</td>
+                <td>HTML</td>
+                <td>CSS</td>
+                <td>JavaScript</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>Git</td>
+                <td>Angular</td>
+                <td>React</td>
+                <td>C#</td>
+                <td>.NET Intro</td>
+                <td>SQL</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

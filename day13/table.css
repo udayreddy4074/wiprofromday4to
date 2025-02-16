@@ -1,0 +1,19 @@
+
+.timetable {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+.timetable th, .timetable td {
+    border: 1px solid #af1583;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(224, 217, 13, 0.881);
+}
+.timetable th {
+    background-color: #333;
+    color: white;
+}
+.lunch {
+    background-color: #e0e0e0;
+}
