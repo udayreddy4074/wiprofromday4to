@@ -1,0 +1,32 @@
+.main-container {
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    background-color: yellowgreen;
+}
+  
+  .base-style {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .employee-card, 
+  .department-card,
+  .product-card, 
+  .container-card {
+    border: 5px solid #333;
+    padding: 15px;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    color: rgb(14, 14, 243);
+  }
+  
+  p {
+    font-size: 15px;
+  }
+  
